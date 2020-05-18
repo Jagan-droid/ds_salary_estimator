@@ -43,8 +43,8 @@ lm.fit(X_train, y_train)
 np.mean(cross_val_score(lm, X_train, y_train, scoring = 'neg_mean_absolute_error', cv=3))
 
 #lasso regression
-lm_l = Lasso()
-
+lm_l = Lasso(alpha=.13)
+lm_l.fit(X_train, y_train)
 np.mean(cross_val_score(lm_l, X_train, y_train, scoring = 'neg_mean_absolute_error', cv=3))
 
 alpha = []
